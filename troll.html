@@ -5,14 +5,14 @@
     <style>
       html, body {
         margin:   0;
-        padding:   0;
-        width:     100%;
+        padding:  0;
+        width:    100%;
         height:   100%;
         display:  table;
       }
       
       #troll_div {
-        display:         table-cell;
+        display:        table-cell;
         text-align:     center;
         vertical-align: middle;
       }
@@ -30,10 +30,10 @@
     </div>
     <script>
       const DESTRUCTIVE             = true // self replication when closing
-      const ALLOW_MOVE               = true 
-      const MS_MOVE_DELAY             = 1000 / 30 // 30fps
+      const ALLOW_MOVE              = true 
+      const MS_MOVE_DELAY           = 1000 / 30 // 30fps
       const ALLOW_ANIMATION         = true
-      const WINDOW_REPLICATE_COUNT   = 4
+      const WINDOW_REPLICATE_COUNT  = 4
 
       // get url to itself ("./troll.html")
       const self_replication_url = "./" + window.location.href.split("/").pop()
@@ -71,14 +71,14 @@
 
       troll_div   = document.getElementById("troll_div")
       troll_image = document.getElementById("troll_image")
-      troll_text   = document.getElementById("troll_text")
+      troll_text  = document.getElementById("troll_text")
       troll_title = document.getElementById("troll_title")
 
       // create image out of base64 into png
       troll_image.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAMFBMVEVbsc////+/v79/f38/Pz8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACdmuWAAAAEHRSTlMA////////////////////wFCLQwAAApFJREFUeNrtVE2TmzAMzUw398om97Ud7sXg+4Lt+y5Y//+v9MmQBJq0p5461UwmgJ6kp8/T6b/8XTmXtEpm/nylnwhire29tW7I/CtggVr1pqIEY/uPo4MRGk+uh7kXmPMqHwD41m8eVA8XhswBgQjaeiu+K6b+NTuyIynjnDjQoveIgZcfjwidWNUAZLYffHw/UDCrvio7cUN0OSQJ75nLdAcJiZv+bazMmHnJcwWo3suXG8ssqZt2YB4piPsrlyxGW6Ln6C01XYAH9s0MuvI0o5pbootFCY1ynozL6Ys0c+xtTbe6OHu6llQQpUE5kkQYV5LatZUiqYVMKN7xxl4LQA08doMAZnPpaCKXUkcPQAzRReME8GVaUmUzXgGFKLA0bAMMFEpZzV0W5FXqpTsyw+ah4dGxlyYGX3HcCWW1cVAX62YUJ4qtSpMUFc/NQqqO1ZuGsxoVRNo+is4bi7Daf651QFieaEBik5LGC4YazrduLehsi+ob9LMIhwyU48TmshuXJTAa2WAtogx+4qFn874bh0xQScnQDrQqzXpic5u5M0hcxhY7FfDUEsFi0Qubj8fMIkZr0PBoBBDRNEzHA/CFGKEIMzjPKbFE2QO+Ua0LTAfeCd0Bb1LeMElwl+/69AAICQxSp5GpjqliSom7zalzfy1tV4dBLxSbaZn3qzUqLEPgDTCqufWY6/fHchYbsZED0gSg6ZoxJGT1vt9vJYirLE8fIljIBF1OTwjlBnAsKdbBOQBOUfW2322mJXMEnCIOD44MBk8ugcNINk+XDE5wXGy9ZDgAzdOtM2TtbQHA6AmwXkMr4uQAPAO2U3KT9sXJLcnf9erz5dWWoVkl/PawR9kEF/50/Pn1zf935SeusKXL3v+LQAAAAABJRU5ErkJggg=="
 
       if (window.name == "") {
-        troll_text.style.display = "block"
+        troll_text.style.display  = "block"
         troll_title.style.display = "block"
         troll_image.onclick = function(){
           var testing_one   = open("", "", "height=100,width=100")
@@ -99,12 +99,12 @@
           }
         }
       } else {
-        var x     = window.screenX
-        var y     = window.screenY
-        var dx     = Math.floor(Math.random() * 30 + 10)  
-        var dy     = Math.floor(Math.random() * 30 + 10)
-        var maxx   = window.screen.availWidth - window.outerWidth
-        var maxy   = window.screen.availHeight - window.outerHeight  
+        var x    = window.screenX
+        var y    = window.screenY
+        var dx   = Math.floor(Math.random() * 30 + 10)  
+        var dy   = Math.floor(Math.random() * 30 + 10)
+        var maxx = window.screen.availWidth - window.outerWidth
+        var maxy = window.screen.availHeight - window.outerHeight  
 
         function update_position() {
           if (x + dx > maxx || x + dx < 0) { dx = -dx }
@@ -144,7 +144,7 @@
         if (ALLOW_MOVE) { setInterval(update_position, MS_MOVE_DELAY) }
         
         if (DESTRUCTIVE) {
-          window.onclick     = ()=>{open_troll(WINDOW_REPLICATE_COUNT)}
+          window.onclick    = ()=>{open_troll(WINDOW_REPLICATE_COUNT)}
           window.onkeypress = ()=>{open_troll(WINDOW_REPLICATE_COUNT)}
           setInterval(closed_window_check, 1000)
         }
